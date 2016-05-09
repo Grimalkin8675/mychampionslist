@@ -1,0 +1,9 @@
+Options +FollowSymLinks
+RewriteEngine on
+
+RewriteRule ^\.htaccess$ $1 [R=403,L]
+
+RewriteCond %{REQUEST_URI} ^\/(js)|(img)|(css)\/.*$
+RewriteRule ^(.*)$ $1 [L]
+
+RewriteRule ^([a-zA-Z]+)\/([^\/]*)\/?$ ?region=$1&pseudo=$2 [L]

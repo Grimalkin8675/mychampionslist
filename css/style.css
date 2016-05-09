@@ -1,0 +1,426 @@
+@charset "UTF-8";
+
+@font-face {
+	font-family: lolFont;
+	src: url("FrizQuadrataRegular.woff");
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	outline: none;
+}
+
+body {
+	color: white;
+	text-shadow: 0 0 5px black;
+	font-size: 12pt;
+	font-family: lolFont;
+	font-weight: lighter;
+	background-image: url("../img/bg-landing.jpg");
+	background-size: 100%;
+	background-attachment: fixed;
+
+
+}
+
+h6, h5, h4, h3, h2, h1 {
+	padding: 0.33em 0;
+	margin: 0;
+}
+
+a, a:focus, a:hover, a:visited, a:visited:hover, a:active {
+	text-decoration: none;
+	color: inherit;
+}
+
+table {
+	border-collapse: collapse;
+}
+
+p {
+	text-align: justify;
+}
+
+hr {
+	margin: 1em auto;
+}
+
+.hidden {
+	/*display: none;*/
+	position: absolute;
+	left: -9999em;
+}
+
+
+/* content */
+#content {
+	width: 90%;
+	max-width: 1700px;
+	margin: 0 auto;
+}
+
+
+/* header */
+header {
+	margin-top: 0.67em;
+}
+
+#home {
+	display: inline-block;
+	font-size: 2.5em;
+	vertical-align: middle;
+	text-shadow: 0 0 5px wheat;
+	color: goldenrod;
+}
+
+#searchBar {
+	/*margin: 1em auto 0;*/
+	/*text-align: center;*/
+	margin-top: 0.5em;
+	font-size: 1.1em;
+	vertical-align: middle;
+	float: right;
+}
+
+#searchBar form {
+	display: inline-block;
+}
+
+input#summoner_name, select#region, a#search {
+	display: inline-block;
+	font-family: inherit;
+	font-size: inherit;
+	padding: 0.33em 0.67em;
+	vertical-align: middle;
+	text-shadow: 0 0 2px white;
+	border: 1px solid wheat;
+	background-color: white;
+	background-color: transparent;
+	color: wheat;
+	-webkit-box-shadow: 0 0 1px 0 white;
+	-moz-box-shadow: 0 0 1px 0 white;
+	box-shadow: 0 0 1px 0 white;
+}
+
+input#summoner_name:-webkit-autofill, input#summoner_name:focus:-webkit-autofill {
+	-webkit-text-fill-color: wheat;
+	-webkit-box-shadow: 0 0 0 100px black inset;
+}
+input#summoner_name:-moz-autofill, input#summoner_name:focus:-moz-autofill {
+	-moz-text-fill-color: wheat;
+	-moz-box-shadow: 0 0 0 100px black inset;
+}
+input#summoner_name:-o-autofill, input#summoner_name:focus:-o-autofill {
+	-o-text-fill-color: wheat;
+	-o-box-shadow: 0 0 0 100px black inset;
+}
+input#summoner_name:-khtml-autofill, input#summoner_name:focus:-khtml-autofill {
+	-khtml-text-fill-color: wheat;
+	-khtml-box-shadow: 0 0 0 100px black inset;
+}
+
+select#region {
+	-webkit-appearance: none;  /*Removes default chrome and safari style*/
+	-moz-appearance: none;  /*Removes default style Firefox*/
+	border-left-style: none;
+	font-size: inherit;
+}
+@media screen and (max-width: 1440px) {
+	select#region {
+		/*padding-top: calc(0.33em - 1px);
+		padding-bottom: calc(0.33em - 1px);*/
+	}
+}
+select#region:hover {
+	cursor: pointer;
+}
+select#region option {
+	background-color: black;
+}
+
+a#search {
+	margin-left: 1em;
+	width: auto;
+	font-weight: bold;
+}
+a#search:hover {
+	background-color: rgba(255,255,255,0.2);
+}
+
+
+/* error */
+#error {
+	font-style: italic;
+	margin: 1.67em 0;
+	border-bottom: 1px solid #b59458;
+	font-size: 1.1em;
+}
+
+
+/* summoner */
+#summoner {
+	margin: 1.67em 0;
+	position: relative;
+	border: 3px double #b59458;
+}
+
+#summoner>* {
+	position: absolute;
+	z-index: 10;
+}
+
+#bg-banner {
+	overflow: hidden;
+	position: relative;
+	z-index: 1;
+}
+
+#bg-banner>img {
+	width: 100%;
+}
+
+#icon {
+	top: 5%;
+	left: 0.7%;
+	height: 90%;
+	-webkit-box-shadow: 0 0 10px 2px black;
+	-moz-box-shadow: 0 0 10px 2px black;
+	box-shadow: 0 0 10px 2px black;
+}
+
+#summInfos {
+	left: 13.5%;
+	bottom: 5%;
+	text-shadow: 5px 5px 5px black;
+}
+
+#championsPoints {
+	right: 1%;
+	bottom: 10%;
+	text-shadow: 5px 5px 5px black;
+	font-size: 1.2em;
+}
+
+
+/* #tabs */
+#tabs {
+	display: block;
+	margin-bottom: 1.67em;
+	text-align: center;
+}
+#tabs ul {
+	display: inline-block;
+	list-style-type: none;
+}
+#tabs li {
+	display: inline-block;
+	border: 1px solid #c9a23c;
+	border: 2px solid #b59458;
+	/*border-bottom: none;*/
+	border-right-style: none;
+	border-left-style: none;
+	/*width: 50%;*/
+	/*box-sizing: border-box;*/
+}
+#tabs li:first-child {
+	border-radius: 3px 0 0 3px;
+	border-left-style: solid;
+}
+#tabs li:last-child {
+	border-radius: 0 3px 3px 0;
+	border-right-style: solid;
+}
+#tabs a {
+	font-size: 1.05em;
+	text-shadow: none;
+	display: block;
+	padding: 0.33em 0.67em;
+	color: wheat;
+}
+#tabs a:hover {
+	background-color: rgba(181,157,98,0.4);
+}
+#tabs a.active, #tabs a.active:hover {
+	text-shadow: 0 0 5px white;
+	cursor: default;
+	font-weight: bold;
+	background-color: rgba(184,134,11,0.9);
+}
+
+
+/* main */
+::-webkit-scrollbar				{ /* all the scrollbar */ }
+::-webkit-scrollbar-button		{ /* the buttons to scroll */ }
+::-webkit-scrollbar-track		{ /* all the space under the progress bar */ }
+::-webkit-scrollbar-track-piece	{ /* emtpy space under the progress bar, non covered by the progress bar */ }
+::-webkit-scrollbar-thumb		{ /* the progress bar */ }
+::-webkit-scrollbar-corner		{ /* the right bottom corner where the two scrollbars meet */ }
+::-webkit-resizer				{ /* the draggable resizing handle */ }
+body {
+	scrollbar-face-color: red;
+	scrollbar-shadow-color: yellow;
+	scrollbar-highlight-color: green;
+	scrollbar-3dlight-color: blue;
+	scrollbar-darkshadow-color: orange;
+	scrollbar-track-color: purple;
+	scrollbar-arrow-color: gold;
+}
+
+#graphChampions::-webkit-scrollbar {
+	width: 12px;
+}
+#graphChampions::-webkit-scrollbar-track {
+	background-color: rgba(0,0,0,0.4);
+}
+#graphChampions::-webkit-scrollbar-thumb {
+	background-color: #b59458;
+}
+
+#masteryScores {
+	position: absolute;
+	z-index: 100;
+}
+#masteryScores>div {
+	/*border-bottom: 1px solid #b59458;*/
+}
+#masteryScores>div:first-child {
+	/*border-bottom: none;*/
+	/*border-top: 1px solid #b59458;*/
+	/*text-align: right;*/
+	border-top: 3px double #b59458;
+}
+
+#masteryScores>div h5 {
+	display: inline-block;
+	padding: 0.67em 1.33em;
+	border: 1px solid #b59458;
+	/*border-bottom-style: none;*/
+	border-right-style: none;
+	background-color: black;
+}
+#masteryScores>div:first-child h5 {
+	/*border-top-style: none;*/
+	border-top-style: none;
+}
+#masteryScores>div h5:last-child {
+	border-right-style: solid;
+}
+
+
+#graphChampions {
+	/*overflow-y: auto;*/
+	/*height: 400px;*/
+	margin: 1em 0;
+	border-top: 3px double #b59458;
+	/*border-bottom: 1px solid #b59458;*/
+	/*padding-top: 5em;*/
+}
+
+#top {
+	margin-bottom: 5em;
+}
+
+#graphChampions table {
+	width: 100%;
+	width: calc(100% - 10px);
+}
+
+#graphChampions td {
+	display: inline-block;
+}
+
+#graphChampions td:first-child {
+	/*width: 4em;*/
+	position: relative;
+	margin: 8px 4px; 
+}
+.chest td:first-child::before {
+	display: inline-block;
+	content: "";
+	background-image: url("../img/chest_64.png");
+	background-size: 100% 100%;
+	width: 2em;
+	height: 2em;
+	vertical-align: middle;
+}
+#graphChampions td:first-child img {
+	display: inline-block;
+	width: 4em;
+	border: 4px solid transparent;
+	vertical-align: middle;
+	margin-left: 2.5em;
+}
+.chest td:first-child img {
+	margin-left: 0.2em !important;
+}
+.level5 img {
+	border-color: #672121 !important;
+}
+.level4 img {
+	border-color: #725a34 !important;
+}
+
+.highestGrade {
+	position: absolute;
+	bottom: 0.2em;
+	right: 0.4em;
+}
+
+
+#graphChampions td:last-child {
+	width: 100%;
+	width: calc(100% - 134px);
+	margin-left: 8px;
+}
+
+@keyframes bars {
+	from { width: 0;}
+	to { width: none; }
+}
+@-webkit-keyframes bars {
+	from { width: 0;}
+	to { width: none; }
+}
+.bar {
+	height: 1.6em;
+	background-color: #bb985a;
+	animation: bars 3s ease-out;
+	-webkit-animation: bars 3s ease-out;
+}
+.bar:hover {
+	cursor: pointer;
+}
+.level5 .bar {
+	height: 2em;
+	background: #672121; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #672121, firebrick); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #672121, firebrick); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #672121, firebrick); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #672121, firebrick); /* Standard syntax */
+}
+.level4 .bar {
+	height: 2em;
+	background: #725a34; /* For browsers that do not support gradients */
+	background: -webkit-linear-gradient(left, #725a34, #9e7a39); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(right, #725a34, #9e7a39); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(right, #725a34, #9e7a39); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(to right, #725a34, #9e7a39); /* Standard syntax */
+}
+
+
+#nonPlayedChamps img {
+	width: 3.5em;
+	border: 2px ridge transparent;
+}
+
+#nonPlayedChamps img.freeToPlay {
+	border-color: darkgoldenrod;
+}
+
+#nonPlayedChamps i {
+	display: block;
+	margin-top: 0.33em;
+	font-size: 0.9;
+	color: grey;
+}
