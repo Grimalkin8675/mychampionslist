@@ -37,7 +37,8 @@
 
 		// graphChampions
 		$tabs = str_repeat("	", 5);
-		$graphChampions = "$tabs<div id='top'></div>\n";
+		$graphChampions = "";
+		$graphChampions .= "$tabs<div id='top'></div>\n";
 		$graphChampions .= "$tabs<table>\n";
 		foreach ($CHAMPIONS as $champion) {
 			$championLevel = $champion['championLevel'];
@@ -105,6 +106,7 @@
 						--><h5>Level 4 champions : <i><?php echo $level4Champions; ?></i></h5>
 					</div>
 				</div>
+				<div id="scrollToTop">&uArr;</div>
 				<div id="graphChampions">
 <?php
 		echo $graphChampions;
