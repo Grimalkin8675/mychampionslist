@@ -272,18 +272,20 @@ body {
 	background-color: #b59458;
 }
 
+
 #masteryScores {
+	width: 90%;
+	max-width: 1700px;
+	border-top: 3px double #b59458;
 	position: absolute;
 	z-index: 100;
 }
-#masteryScores>div {
-	/*border-bottom: 1px solid #b59458;*/
+#masteryScores.fixed {
+	position: fixed;
+	top: 0;
 }
 #masteryScores>div:first-child {
-	/*border-bottom: none;*/
-	/*border-top: 1px solid #b59458;*/
-	/*text-align: right;*/
-	border-top: 3px double #b59458;
+	/*border-top: 3px double #b59458;*/
 }
 
 #masteryScores>div h5 {

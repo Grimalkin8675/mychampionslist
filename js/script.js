@@ -56,6 +56,7 @@ function show_tab(played) {
 	document.getElementById('tabs').getElementsByTagName('a')[1].className = played?"":"active";
 }
 
+var fixed = false; var offsetTop;
 function init_js() {
 	document.getElementById('search').onfocus = function () { change_link(); }
 
@@ -70,5 +71,22 @@ function init_js() {
 		var anchors = tabs.getElementsByTagName('a');
 		anchors[0].onclick = function () { show_tab(true); }
 		anchors[1].onclick = function () { show_tab(false); }
+	}
+
+	var masteryScores = document.getElementById('masteryScores');
+	if (masteryScores != undefined) {
+		offsetTop = masteryScores.offsetTop;
+
+		document.body.onscroll = function () {
+			if (document.body.scrollTop > offsetTop) {
+				if (!fixed) {
+					masteryScores.className = "fixed";
+					fixed = true;
+				}
+			} else if (fixed) {
+				masteryScores.className = "";
+				fixed = false;
+			}
+		};
 	}
 }
