@@ -95,9 +95,10 @@ input#summoner_name, select#region, a#search {
 	vertical-align: middle;
 	text-shadow: 0 0 2px white;
 	border: 1px solid wheat;
-	background-color: white;
 	background-color: transparent;
 	color: wheat;
+	box-sizing: border-box;
+	height: 2.2em;
 	-webkit-box-shadow: 0 0 1px 0 white;
 	-moz-box-shadow: 0 0 1px 0 white;
 	box-shadow: 0 0 1px 0 white;
@@ -125,12 +126,6 @@ select#region {
 	-moz-appearance: none;  /*Removes default style Firefox*/
 	border-left-style: none;
 	font-size: inherit;
-}
-@media screen and (max-width: 1440px) {
-	select#region {
-		/*padding-top: calc(0.33em - 1px);
-		padding-bottom: calc(0.33em - 1px);*/
-	}
 }
 select#region:hover {
 	cursor: pointer;
