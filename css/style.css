@@ -47,9 +47,12 @@ hr {
 }
 
 .hidden {
-	/*display: none;*/
 	position: absolute;
 	left: -9999em;
+}
+
+.displayNone {
+	display: none;
 }
 
 
@@ -302,6 +305,25 @@ body {
 }
 #masteryScores>div h5:last-child {
 	border-right-style: solid;
+}
+
+
+#scrollToTop {
+	background-color: dimgray;
+	color: white;
+	font-size: 1.33em;
+	padding: 0.6em 1.05em;
+	position: fixed;
+	right: 1.33em;
+	bottom: 0.5em;
+	z-index: 1000;
+}
+#scrollToTop:hover {
+	cursor: pointer;
+	background-color: gray;
+}
+.hidden #scrollToTop {
+	position: absolute;
 }
 
 

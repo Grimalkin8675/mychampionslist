@@ -56,15 +56,46 @@ function show_tab(played) {
 	document.getElementById('tabs').getElementsByTagName('a')[1].className = played?"":"active";
 }
 
-var fixed = false; var offsetTop;
+function scrollToTop(delay) {
+	var scrollTop = document.body.scrollTop; // px
+	var totalScrollDelay = 500; // ms
+	var step = 25; // px
+	delay = delay==undefined?((scrollTop==0)?0:parseInt(totalScrollDelay*step/scrollTop)):delay; // ms
+
+	scrollTop -= step;
+
+	if (scrollTop < 0) {
+		document.body.scrollTop = 0;
+	} else {
+		document.body.scrollTop = scrollTop;
+		setTimeout(function () { scrollToTop(delay) }, delay);
+	}
+}
+
+function bindOnScrollEvent() {
+	document.body.onscroll = function () {
+		console.log("*scroll*");
+		var masteryScoresElt = document.getElementById('masteryScores');
+		var offsetTop = document.getElementById('playedChamps').offsetTop;
+
+		if (document.body.scrollTop > offsetTop) {
+			masteryScoresElt.className = "fixed";
+		} else {
+			masteryScoresElt.className = "";
+		}
+	};
+}
+
 function init_js() {
 	document.getElementById('search').onfocus = function () { change_link(); }
 
 	document.getElementsByTagName('form')[0].onsubmit = function () { search_summoner(); }
 
 	resize_page();
-	document.body.onresize = function () { resize_page; }
-
+	document.body.onresize = function () {
+		resize_page();
+	};
+	
 	var tabs = document.getElementById('tabs');
 	if (tabs != undefined) {
 		show_tab(window.location.hash!="#otherChamps");
@@ -73,20 +104,10 @@ function init_js() {
 		anchors[1].onclick = function () { show_tab(false); }
 	}
 
-	var masteryScores = document.getElementById('masteryScores');
-	if (masteryScores != undefined) {
-		offsetTop = masteryScores.offsetTop;
-
-		document.body.onscroll = function () {
-			if (document.body.scrollTop > offsetTop) {
-				if (!fixed) {
-					masteryScores.className = "fixed";
-					fixed = true;
-				}
-			} else if (fixed) {
-				masteryScores.className = "";
-				fixed = false;
-			}
-		};
+	var scrollToTopElt = document.getElementById('scrollToTop');
+	if (scrollToTopElt != undefined) {
+		scrollToTopElt.onclick = function () { scrollToTop(); };
 	}
+
+	bindOnScrollEvent();
 }
