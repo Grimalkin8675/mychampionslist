@@ -74,8 +74,8 @@
 
 	<meta charset="UTF-8">
 
-	<link rel="stylesheet" type="text/css" href="css/style.css">
-	<script type="text/javascript" src="js/script.js"></script>
+	<link rel="stylesheet" type="text/css" href="<?php echo APP_ROOT; ?>/css/style.css">
+	<script type="text/javascript" src="<?php echo APP_ROOT; ?>/js/script.js"></script>
 
 </head>
 <body>
