@@ -115,9 +115,17 @@
 			</div>
 			<div id='nonPlayedChamps'>
 <?php
+		if ($nonPlayedChamps == "") {
+?>
+				<i>This summoner has play all the champions at least once.</i>
+<?php
+		} else {
 		echo $nonPlayedChamps;
 ?>
 				<i>Tip : Free to play champions are yellow bordered. Play them before next tuesday to increase your mastery score !</i>
+<?php
+		}
+?>
 			</div>
 <?php
 	}
