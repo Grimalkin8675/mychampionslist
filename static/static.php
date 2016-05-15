@@ -117,7 +117,7 @@
 <?php
 		if ($nonPlayedChamps == "") {
 ?>
-				<i>This summoner has play all the champions at least once.</i>
+				<i>This summoner has played all the champions at least once.</i>
 <?php
 		} else {
 		echo $nonPlayedChamps;
