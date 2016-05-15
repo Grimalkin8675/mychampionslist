@@ -44,8 +44,6 @@ function search_summoner() {
 			window.open(window.location.origin+"/"+region+"/"+summoner_name/*+hash*/, "_self");
 		}
 	}
-	
-	return false;
 }
 
 function show_tab(played) {
@@ -89,7 +87,7 @@ function bindOnScrollEvent() {
 function init_js() {
 	document.getElementById('search').onfocus = function () { change_link(); }
 
-	document.getElementsByTagName('form')[0].onsubmit = function () { search_summoner(); }
+	document.getElementsByTagName('form')[0].onsubmit = function () { search_summoner(); return false; }
 
 	resize_page();
 	document.body.onresize = function () {
