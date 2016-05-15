@@ -55,7 +55,7 @@
 			}
 		}
 	} else {
-		$error = "Invalid region name.";
+		$error = "Invalid region name: $REGION";
 	}
 
 ?>
@@ -84,7 +84,16 @@
 
 		<!-- Title and search bar -->
 		<header>
-			<a href="<?php echo APP_ROOT; ?>" id="home">My Champions List</a>
+			<a href="<?php echo APP_ROOT;
+				switch ($_SERVER['SERVER_NAME']) {
+					case "webetu.pau.eisti.fr":
+					case "localhost":
+						echo "?region=$REGION";
+						break;
+					default:
+						echo "/$REGION";
+						break;
+				} ?>" id="home">My Champions List</a>
 			<!-- <h4>Search a summoner to see how many mastery points he has with the champions he played, the highest grades he got, and much more.</h4> -->
 			<span id="searchBar">
 				<form>
