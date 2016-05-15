@@ -440,6 +440,7 @@ body {
 #nonPlayedChamps i {
 	display: block;
 	margin-top: 0.33em;
+	margin-bottom: 1em;
 	font-size: 0.9;
 	color: grey;
 }
