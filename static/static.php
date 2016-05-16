@@ -21,6 +21,18 @@
 		}
 	}
 
+	function formatNumber($n) {
+		$str = (string) $n;
+		$len = strlen($str) - 1;
+		$res = "";
+
+		for ($i = $len; $i >= 0; $i--) {
+			$res = $str[$i] . ((($len-$i)%3)==0?",":"") . $res;
+		}
+
+		return substr($res, 0, -1);
+	}
+
 	function display_champions($CHAMPIONS) {
 		global $CHAMPIONS_NAME, $FREE_TO_PLAY;
 
@@ -69,7 +81,7 @@
 			$graphChampions .= "$tabs		</td>\n";
 			$graphChampions .= "$tabs		<td>\n";
 			$graphChampions .= "$tabs			<span class='score'>$championPoints</span>\n";
-			$graphChampions .= "$tabs			<div title='Level $championLevel : $championPoints".(($championLevel==5)?"":" / $nextLevelPoints")." pts' class='bar' style='width: $percents%;'></div>\n";
+			$graphChampions .= "$tabs			<div title='Level $championLevel: ".formatNumber($championPoints).(($championLevel==5)?"":" / ".formatNumber($nextLevelPoints))." pts' class='bar' style='width: $percents%;'></div>\n";
 			$graphChampions .= "$tabs		</td>\n";
 			$graphChampions .= "$tabs	</tr>\n";
 		}
@@ -97,13 +109,13 @@
 			<div id="playedChamps">
 				<div id="masteryScores">
 					<div>
-						<h5>Champions mastery score : <i><?php echo $championMasteryScore; ?> pts</i></h5><!--
-						--><h5>Total champions points : <i><?php echo $totalChampionsPoints; ?> pts</i></h5><!--
-						--><h5>Champions mastered : <i><?php echo $championsPlayed; ?> / <?php echo $numberOfChampions; ?></i></h5>
+						<h5>Champions mastery score: <i><?php echo $championMasteryScore; ?> pts</i></h5><!--
+						--><h5>Total champions points: <i><?php echo formatNumber($totalChampionsPoints); ?> pts</i></h5><!--
+						--><h5>Champions mastered: <i><?php echo $championsPlayed; ?> / <?php echo $numberOfChampions; ?></i></h5>
 					</div>
 					<div>
-						<h5>Level 5 champions : <i><?php echo $level5Champions; ?></i></h5><!--
-						--><h5>Level 4 champions : <i><?php echo $level4Champions; ?></i></h5>
+						<h5>Level 5 champions: <i><?php echo $level5Champions; ?></i></h5><!--
+						--><h5>Level 4 champions: <i><?php echo $level4Champions; ?></i></h5>
 					</div>
 				</div>
 				<div id="scrollToTop">&uArr;</div>
@@ -122,7 +134,7 @@
 		} else {
 		echo $nonPlayedChamps;
 ?>
-				<i>Tip : Free to play champions are yellow bordered. Play them before next tuesday to increase your mastery score !</i>
+				<i>Tip: Free to play champions are yellow bordered. Play them before next tuesday to increase your mastery score !</i>
 <?php
 		}
 ?>
