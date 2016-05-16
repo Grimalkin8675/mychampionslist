@@ -107,5 +107,6 @@ function init_js() {
 		scrollToTopElt.onclick = function () { scrollToTop(); };
 	}
 
+	// document.body.onload = function () { bindOnScrollEvent(); };
 	bindOnScrollEvent();
 }
