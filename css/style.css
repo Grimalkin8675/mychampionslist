@@ -342,7 +342,6 @@ body {
 
 #graphChampions table {
 	width: 100%;
-	width: calc(100% - 10px);
 }
 
 #graphChampions td {
@@ -352,7 +351,7 @@ body {
 #graphChampions td:first-child {
 	/*width: 4em;*/
 	position: relative;
-	margin: 8px 4px; 
+	margin: 8px 0; 
 }
 .chest td:first-child::before {
 	display: inline-block;
@@ -363,21 +362,21 @@ body {
 	height: 2em;
 	vertical-align: middle;
 }
-#graphChampions td:first-child img {
+#graphChampions img {
 	display: inline-block;
 	width: 4em;
 	border: 4px solid transparent;
 	vertical-align: middle;
 	margin-left: 2.5em;
 }
-.chest td:first-child img {
-	margin-left: 0.2em !important;
+#graphChampions .chest img {
+	margin-left: 0.2em;
 }
-.level5 img {
-	border-color: #672121 !important;
+#graphChampions .level5 img {
+	border-color: #672121;
 }
-.level4 img {
-	border-color: #725a34 !important;
+#graphChampions .level4 img {
+	border-color: #725a34;
 }
 
 .highestGrade {
@@ -389,7 +388,7 @@ body {
 
 #graphChampions td:last-child {
 	width: 100%;
-	width: calc(100% - 134px);
+	width: calc(100% - 120px);
 	margin-left: 8px;
 }
 
@@ -431,6 +430,8 @@ body {
 #nonPlayedChamps img {
 	width: 3.5em;
 	border: 2px ridge transparent;
+	border-left-style: groove;
+	border-top-style: groove;
 }
 
 #nonPlayedChamps img.freeToPlay {
