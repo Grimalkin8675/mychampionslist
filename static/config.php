@@ -1,6 +1,6 @@
 <?php
 
-	define("API_VERSION", "6.9.1");
+	define("API_VERSION", "6.10.1");
 
 	switch ($_SERVER['SERVER_NAME']) {
 		case "webetu.pau.eisti.fr":
