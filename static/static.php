@@ -42,7 +42,7 @@
 		$totalChampionsPoints = 0;
 		$championsPlayed = count($CHAMPIONS);
 		$numberOfChampions = count($CHAMPIONS_NAME);
-		$level5Champions = 0;
+		$level5ChampionsPlus = 0;
 		$level4Champions = 0;
 
 		$playedChamps = [];
@@ -68,7 +68,7 @@
 
 			$championMasteryScore += $championLevel;
 			$totalChampionsPoints += $championPoints;
-			if ($championLevel == 5) { $level5Champions += 1; }
+			if ($championLevel >= 5) { $level5ChampionsPlus += 1; }
 			if ($championLevel == 4) { $level4Champions += 1; }
 
 
@@ -114,7 +114,7 @@
 						--><h5>Champions mastered: <i><?php echo $championsPlayed; ?> / <?php echo $numberOfChampions; ?></i></h5>
 					</div>
 					<div>
-						<h5>Level 5 champions: <i><?php echo $level5Champions; ?></i></h5><!--
+						<h5>Level 5+ champions: <i><?php echo $level5ChampionsPlus; ?></i></h5><!--
 						--><h5>Level 4 champions: <i><?php echo $level4Champions; ?></i></h5>
 					</div>
 				</div>
