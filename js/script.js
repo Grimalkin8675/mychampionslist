@@ -96,7 +96,7 @@ function init_js() {
 	
 	var tabs = document.getElementById('tabs');
 	if (tabs != undefined) {
-		show_tab(window.location.hash=="#masteredChamps");
+		show_tab(window.location.hash!="#otherChamps");
 		var anchors = tabs.getElementsByTagName('a');
 		anchors[0].onclick = function () { show_tab(true); }
 		anchors[1].onclick = function () { show_tab(false); }
